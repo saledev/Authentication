@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <PackageId>saledev.Authentication.JwtBearer</PackageId>
+    <Title>saledev.Authentication.JwtBearer</Title>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>saledev</Authors>
+    <Company>saledev</Company>
+    <PackageProjectUrl>https://github.com/saledev/authentication</PackageProjectUrl>
+    <Description>A simple package for Authentication.</Description>
+    <Summary>A simple package for Authentication.</Summary>
+    <RepositoryUrl>https://github.com/saledev/authentication</RepositoryUrl>
+    <PackageTags>Authentication</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReleaseNotes>Authentication library.</PackageReleaseNotes>
+    <Version>1.0.0</Version>
+    <AssemblyName>saledev.Authentication.JwtBearer</AssemblyName>
+    <PackageIcon>icon.png</PackageIcon>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JWT" Version="8.9.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\saledev.Authentication\saledev.Authentication.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

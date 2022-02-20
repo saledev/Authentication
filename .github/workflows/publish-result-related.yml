@@ -1,0 +1,26 @@
+name: Publish saledev.Authentication to Nuget.org
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Publish saledev.Authentication.JwtBearer to NuGet
+      uses: brandedoutcast/publish-nuget@v2.5.0
+      with:
+        PROJECT_FILE_PATH: saledev.Authentication.JwtBearer/saledev.Authentication.JwtBearer.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
