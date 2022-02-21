@@ -7,6 +7,6 @@ namespace saledev.Authentication.JwtBearer
         public const string SectionName = "Authentication";
 
         public string Secret { get; set; } = String.Empty;
-        public int HoursTokenIsValid { get; set; } = 1;
+        public int MinutesTokenIsValid { get; set; } = 1;
     }
 }

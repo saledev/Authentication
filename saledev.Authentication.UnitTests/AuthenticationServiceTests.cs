@@ -15,7 +15,7 @@ public class AuthenticationServiceTests
         var options = Options.Create(new AuthenticationOptions()
         {
             Secret = "test123",
-            HoursTokenIsValid = 24
+            MinutesTokenIsValid = 20
         });
         var service = new AuthenticationService(options);
         var userId = new Guid();

@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "saledev.Authentication.JwtB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "saledev.Authentication", "saledev.Authentication\saledev.Authentication.csproj", "{7FDFE687-F817-49AA-88CA-43AEBCE3F12E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "saledev.Authentication.UnitTests", "saledev.Authentication.UnitTests\saledev.Authentication.UnitTests.csproj", "{8F18F2B5-B282-4BBF-856F-5E4762469AA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "saledev.Authentication.UnitTests", "saledev.Authentication.UnitTests\saledev.Authentication.UnitTests.csproj", "{8F18F2B5-B282-4BBF-856F-5E4762469AA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{48B06A1D-1BDF-4F71-A84C-41986B5BA3F1}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

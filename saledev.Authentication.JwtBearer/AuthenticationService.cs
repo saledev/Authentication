@@ -21,7 +21,7 @@ namespace saledev.Authentication.JwtBearer
             var token = JwtBuilder.Create()
                       .WithAlgorithm(new HMACSHA256Algorithm()) // symmetric
                       .WithSecret(options.Secret)
-                      .AddClaim("exp", DateTimeOffset.UtcNow.AddHours(options.HoursTokenIsValid).ToUnixTimeSeconds())
+                      .AddClaim("exp", DateTimeOffset.UtcNow.AddMinutes(options.MinutesTokenIsValid).ToUnixTimeSeconds())
                       .AddClaim("UserId", claim.UserId)
                       .AddClaim("Roles", claim.Roles)
                       .Encode();
