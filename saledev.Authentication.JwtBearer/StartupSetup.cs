@@ -11,6 +11,7 @@ namespace saledev.Authentication.JwtBearer
             services.Configure<AuthenticationOptions>(config);
             services.Configure<AuthenticationOptions>(config.GetSection(AuthenticationOptions.SectionName));
             services.AddTransient<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<ISessionManager, SessionManager>();
 
             return services;
         }
