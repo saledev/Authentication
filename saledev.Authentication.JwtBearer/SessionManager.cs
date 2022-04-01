@@ -26,6 +26,11 @@ public class SessionManager : ISessionManager
         return UserId.Value;
     }
 
+    public Guid? TryGetUserId()
+    {
+        return UserId;
+    }
+
     public List<string> GetRoles()
     {
         if (Roles == null)

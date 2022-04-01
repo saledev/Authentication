@@ -6,6 +6,7 @@ namespace saledev.Authentication;
 public interface ISessionManager
 {
     Guid GetUserId();
+    Guid? TryGetUserId();
     List<string> GetRoles();
     void SaveClaim(string guid, List<string> roles);
 }
