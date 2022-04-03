@@ -24,6 +24,7 @@ namespace saledev.Authentication.JwtBearer
                       .AddClaim("exp", DateTimeOffset.UtcNow.AddMinutes(options.MinutesTokenIsValid).ToUnixTimeSeconds())
                       .AddClaim("UserId", claim.UserId)
                       .AddClaim("Roles", claim.Roles)
+                      .AddClaim("Rights", claim.Rights)
                       .Encode();
             return token;
         }
@@ -41,7 +42,8 @@ namespace saledev.Authentication.JwtBearer
                 var claim = new Claim()
                 {
                     UserId = (string)payload["UserId"],
-                    Roles = ((Newtonsoft.Json.Linq.JArray) payload["Roles"]).ToObject<List<string>>()
+                    Roles = ((Newtonsoft.Json.Linq.JArray) payload["Roles"]).ToObject<List<string>>(),
+                    Rights = ((Newtonsoft.Json.Linq.JArray)payload["Rights"]).ToObject<List<string>>()
                 };
                 return claim;
             }
