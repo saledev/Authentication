@@ -8,6 +8,7 @@ public class SessionManager : ISessionManager
 {
     private Guid? UserId;
     private List<string>? Roles;
+    private List<string>? Rights;
 
     private readonly IStringLocalizer<SessionManager> localizer;
 
@@ -41,9 +42,30 @@ public class SessionManager : ISessionManager
         return Roles;
     }
 
-    public void SaveClaim(string guid, List<string> roles)
+    public List<string>? TryGetRoles()
+    {
+        return Roles;
+    }
+
+    public List<string> GetRights()
+    {
+        if (Rights == null)
+        {
+            throw new ArgumentNullException(localizer["{0} not found in session.", nameof(Rights)]);
+        }
+
+        return Rights;
+    }
+
+    public List<string>? TryGetRights()
+    {
+        return Rights;
+    }
+
+    public void SaveClaim(string guid, List<string> roles, List<string> rights)
     {
         UserId = Guid.Parse(guid);
         Roles = roles;
+        Rights = rights;
     }
 }
